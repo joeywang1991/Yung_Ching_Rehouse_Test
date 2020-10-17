@@ -2,6 +2,7 @@
     ViewBag.Title = "Home Page";
 }
 
+
 <div class="jumbotron">
     <h1>ASP.NET</h1>
     <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
@@ -28,4 +29,32 @@
         <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
         <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
     </div>
+    <div id="test">123</div>
 </div>
+
+@section endjquery{
+    <script>
+        $(document).ready(function () {       
+            $.ajax({
+                url: "/api/Employees",
+                type: "GET",
+                dataType: "json",
+                success: function (response) {
+                    console.log(response);
+                }
+            })
+        })
+    </script>
+}
+
+@*<script>
+    fetch('/api/EmployeeCRUD/Employeeeee')
+        .then(res => {
+            console.log(res);
+            return res.json();
+        }).then(response => {
+            console.log('成功');
+        }).catch(err => {
+            console.log('失敗')
+        });
+</script>*@

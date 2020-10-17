@@ -10,6 +10,7 @@ namespace Test.Models.DataModels
         public Northwind()
             : base("name=Northwind")
         {
+            this.Configuration.ProxyCreationEnabled = false;
         }
 
         public virtual DbSet<Categories> Categories { get; set; }
