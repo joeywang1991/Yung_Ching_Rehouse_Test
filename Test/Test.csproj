@@ -144,31 +144,16 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\DataModels\Alphabetical_list_of_products.cs" />
     <Compile Include="Models\DataModels\Categories.cs" />
-    <Compile Include="Models\DataModels\Category_Sales_for_1997.cs" />
-    <Compile Include="Models\DataModels\Current_Product_List.cs" />
     <Compile Include="Models\DataModels\CustomerDemographics.cs" />
     <Compile Include="Models\DataModels\Customers.cs" />
-    <Compile Include="Models\DataModels\Customer_and_Suppliers_by_City.cs" />
     <Compile Include="Models\DataModels\Employees.cs" />
-    <Compile Include="Models\DataModels\Invoices.cs" />
     <Compile Include="Models\DataModels\Northwind.cs" />
     <Compile Include="Models\DataModels\Orders.cs" />
-    <Compile Include="Models\DataModels\Orders_Qry.cs" />
     <Compile Include="Models\DataModels\Order_Details.cs" />
-    <Compile Include="Models\DataModels\Order_Details_Extended.cs" />
-    <Compile Include="Models\DataModels\Order_Subtotals.cs" />
     <Compile Include="Models\DataModels\Products.cs" />
-    <Compile Include="Models\DataModels\Products_Above_Average_Price.cs" />
-    <Compile Include="Models\DataModels\Products_by_Category.cs" />
-    <Compile Include="Models\DataModels\Product_Sales_for_1997.cs" />
     <Compile Include="Models\DataModels\Region.cs" />
-    <Compile Include="Models\DataModels\Sales_by_Category.cs" />
-    <Compile Include="Models\DataModels\Sales_Totals_by_Amount.cs" />
     <Compile Include="Models\DataModels\Shippers.cs" />
-    <Compile Include="Models\DataModels\Summary_of_Sales_by_Quarter.cs" />
-    <Compile Include="Models\DataModels\Summary_of_Sales_by_Year.cs" />
     <Compile Include="Models\DataModels\Suppliers.cs" />
     <Compile Include="Models\DataModels\Territories.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

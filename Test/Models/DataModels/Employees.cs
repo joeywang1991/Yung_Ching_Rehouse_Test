@@ -69,6 +69,8 @@ namespace Test.Models.DataModels
         [StringLength(255)]
         public string PhotoPath { get; set; }
 
+        public bool? State { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Employees> Employees1 { get; set; }
 

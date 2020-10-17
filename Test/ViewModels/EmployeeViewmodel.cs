@@ -11,4 +11,10 @@ namespace Test.ViewModels
         public string LName { get; set; }
         public string FName { get; set; }
     }
+
+    public class CreateViewModel
+    { 
+        public string LName { get; set; }
+        public string FName { get; set; }
+    }
 }

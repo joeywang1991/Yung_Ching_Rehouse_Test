@@ -20,19 +20,42 @@ namespace Test.WabApi
 
         [AcceptVerbs("GET")]
         public List<EmployeeViewmodel> GetAll()
-        {            
+        {
             return _sevice.GetAllEmployees();
         }
 
         [AcceptVerbs("GET")]
         public EmployeeViewmodel GetEmployee(int id)
-        {            
+        {
             return _sevice.GetEmployee(id);
         }
-        
 
-        [AcceptVerbs("GET")]
-        public 
 
+        [AcceptVerbs("POST")]
+        public string Create(CreateViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                return _sevice.Create(model);
+            }
+            return "格式錯誤";
+            
+        }
+
+        [AcceptVerbs("POST")]
+        public string Edit(EmployeeViewmodel model) 
+        {
+            if (ModelState.IsValid)
+            {
+                return _sevice.Edit(model);
+            }
+            return "格式錯誤";
+        }
+
+        [AcceptVerbs("POST")]
+        public string Delete(int id)
+        {
+            return _sevice.Delete(id);
+        }
     }
 }
