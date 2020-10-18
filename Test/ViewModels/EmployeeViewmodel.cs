@@ -10,6 +10,7 @@ namespace Test.ViewModels
         public int Id { get; set; }
         public string LName { get; set; }
         public string FName { get; set; }
+        public bool? State { get; set; }
     }
 
     public class CreateViewModel

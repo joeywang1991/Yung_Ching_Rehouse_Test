@@ -15,7 +15,7 @@ namespace Test.Service
 
         public List<EmployeeViewmodel> GetAllEmployees()
         {
-            return db.Employees.Select(x => new EmployeeViewmodel() { Id = x.EmployeeID, FName = x.FirstName, LName = x.LastName }).ToList();
+            return db.Employees.Select(x => new EmployeeViewmodel() { Id = x.EmployeeID, FName = x.FirstName, LName = x.LastName, State = x.State }).ToList();
         }
         public EmployeeViewmodel GetEmployee(int id)
         {
@@ -23,7 +23,8 @@ namespace Test.Service
             {
                 Id = x.EmployeeID,
                 FName = x.FirstName,
-                LName = x.LastName
+                LName = x.LastName,
+                State = x.State
             }).FirstOrDefault();
 
             return employee;
@@ -32,9 +33,6 @@ namespace Test.Service
         public string Create(CreateViewModel model) 
         {           
             var create = new Employees()
-            //create.FirstName = model.FName;
-            //create.LastName = model.LName;
-            //create.State = true;
             {
                 FirstName = model.FName,
                 LastName = model.LName,
@@ -72,6 +70,7 @@ namespace Test.Service
         }
         public string Delete(int id)
         {
+            // 軟刪除改 state狀態，刪除後可還原
             var employee = db.Employees.Find(id);
 
             if (employee.State != true)
@@ -82,6 +81,9 @@ namespace Test.Service
             {
                 employee.State = false;
             }
+
+            // 硬刪除直接 remove 刪除資料
+            //db.Employees.Remove(employee);
 
             try
             {
