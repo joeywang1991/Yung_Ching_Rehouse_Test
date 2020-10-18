@@ -68,10 +68,10 @@ namespace Test.Service
                 return ex.ToString();
             }
         }
-        public string Delete(int id)
+        public string Delete(string id)
         {
             // 軟刪除改 state狀態，刪除後可還原
-            var employee = db.Employees.Find(id);
+            var employee = db.Employees.Find(int.Parse(id));
 
             if (employee.State != true)
             {

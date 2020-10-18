@@ -24,13 +24,6 @@ namespace Test.WabApi
             return _sevice.GetAllEmployees();
         }
 
-        //[AcceptVerbs("GET")]
-        //public EmployeeViewmodel GetEmployee(int id)
-        //{
-        //    return _sevice.GetEmployee(id);
-        //}
-
-
         [AcceptVerbs("POST")]
         public string Create(CreateViewModel model)
         {
@@ -53,7 +46,7 @@ namespace Test.WabApi
         }
 
         [AcceptVerbs("POST")]
-        public string Delete(int id)
+        public string Delete(string id)
         {
             return _sevice.Delete(id);
         }
