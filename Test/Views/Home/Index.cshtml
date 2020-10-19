@@ -8,10 +8,11 @@
         <label for="lname" class="mx-3">Last Name : <input id="lname" v-model="lname" /></label>
         <label for="fname" class="mx-3">First Name : <input id="fname" v-model="fname" /></label>
         <button class="btn btn-primary m-3" v-on:click="Create($event)">新增</button>
+        <p>前台使用這案刪除會實際看到資料被刪除，後臺管理者看到的是邏輯刪除(軟刪除)，可以再將資料復原</p>
     </div>
     
     <div class="col-6 border border-danger">
-        <p>前台</p>
+        <p>前台: 使用者介面</p>
         <div v-for="data in employee" v-if="data.State == true">
             <div class="d-flex justify-content-between align-items-center">
                 <span>ID: {{data.Id}}</span>
@@ -25,7 +26,7 @@
         </div>
     </div>
     <div class="col-6 border border-success">
-        <p>後台</p>
+        <p>後台: 管理者介面</p>
         <div v-for="data in employee">
             <div class="d-flex justify-content-between align-items-center">
                 <span>ID: {{data.Id}}</span>
