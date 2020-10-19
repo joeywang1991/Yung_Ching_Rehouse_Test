@@ -5,7 +5,7 @@
 
 <div class="row text-center flex-wrap" id="app">
     <div class="col-12 d-flex align-items-center">
-        <label for="lname" class="mx-3">Lirt Name : <input id="lname" v-model="lname" /></label>
+        <label for="lname" class="mx-3">Last Name : <input id="lname" v-model="lname" /></label>
         <label for="fname" class="mx-3">First Name : <input id="fname" v-model="fname" /></label>
         <button class="btn btn-primary m-3" v-on:click="Create($event)">新增</button>
     </div>
@@ -15,8 +15,8 @@
         <div v-for="data in employee" v-if="data.State == true">
             <div class="d-flex justify-content-between align-items-center">
                 <span>ID: {{data.Id}}</span>
-                <span>{{data.LName}}</span>
-                <span>{{data.FName}}</span>
+                <input v-model="data.LName" class="col-3"/>
+                <input v-model="data.FName" class="col-3"/>
                 <div>
                     <button class="btn btn-primary m-2" :dataId="data.Id" :dataLName="data.LName" :dataFName="data.FName" v-on:click="Edit($event)">編輯</button>
                     <button class="btn btn-danger m-2" :dataId="data.Id" :dataState="data.State" v-on:click="Delete($event)">刪除</button>
@@ -29,8 +29,8 @@
         <div v-for="data in employee">
             <div class="d-flex justify-content-between align-items-center">
                 <span>ID: {{data.Id}}</span>
-                <span>{{data.LName}}</span>
-                <span>{{data.FName}}</span>
+                <input v-model="data.LName" class="col-3"/>
+                <input v-model="data.FName" class="col-3"/>
                 <span>{{data.State}}</span>
                 <div>
                     <button class="btn btn-primary m-2" :dataId="data.Id" :dataLName="data.LName" :dataFName="data.FName" v-model="data.state" v-on:click="Edit($event)">編輯</button>
@@ -74,7 +74,7 @@
                         });
                 },
                 Edit(event) {
-                    let obj = { Id: event.target.getAttribute('dataId'), LName: event.target.getAttribute('dataFName'), FName: event.target.getAttribute('dataLName') }
+                    let obj = { Id: event.target.getAttribute('dataId'), LName: event.target.getAttribute('dataLName'), FName: event.target.getAttribute('dataFName') }
                     fetch('/api/EmployeeCRUD/Edit', {
                         method: 'POST',
                         body: JSON.stringify(obj),
